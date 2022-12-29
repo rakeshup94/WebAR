@@ -55,7 +55,7 @@ import { Tools } from "./utils/Tools";
 
 class GlobalData
 {
-    public static DefaultTextureMaterialPath: string = "assets/";
+    public static DefaultTextureMaterialPath: string = "../assets/";
 
     public static DefaultTextureFileExtension: string =  ".jpg";
             

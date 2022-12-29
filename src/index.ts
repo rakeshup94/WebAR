@@ -90,6 +90,8 @@ function initializeXRApp() {
     button = ARButton.createButton(renderer, { requiredFeatures: ["hit-test"] }),
   );
 
+
+
   button.click();
 
     
