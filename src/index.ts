@@ -25,19 +25,27 @@ function initializeXRApp(model: string) {
     
   renderer.setSize(innerWidth, innerHeight);
   renderer.setPixelRatio(devicePixelRatio);
-
   renderer.xr.enabled = true;
 
-  document.body.appendChild(renderer.domElement);
+  const container = document.getElementById("xr-ui-container");
+
+  container?.appendChild(renderer.domElement);
+
+  // document.body.appendChild(renderer.domElement);
 
   var button;
 
+  const boxWrapper = document.getElementById("app-root");
   
-  document.body.appendChild(
+ boxWrapper?.appendChild(
     button = ARButton.createButton(renderer, { requiredFeatures: ["hit-test"] }),
   );
+  
+  // document.body.appendChild(
+  //   button = ARButton.createButton(renderer, { requiredFeatures: ["hit-test"] }),
+  // );
 
-  button.click();
+  button?.click();
 
     createScene(renderer, model);
 };
@@ -45,32 +53,32 @@ function initializeXRApp(model: string) {
 async function start() {
   const isImmersiveArSupported = await browserHasImmersiveArCompatibility();
 
-    if (window.location.search.length == 0) {
-        console.log("404");
-    }
-    if (!isImmersiveArSupported) {
-        displayUnsupportedBrowserMessage();
-        //@ts-ignore
-       // let params: Map<string, string> = null;
+    // if (window.location.search.length == 0) {
+    //     console.log("404");
+    // }
+    // if (!isImmersiveArSupported) {
+    //     displayUnsupportedBrowserMessage();
+    //     //@ts-ignore
+    //    // let params: Map<string, string> = null;
         
-        //let landingPage: LandingPage; 
+    //     //let landingPage: LandingPage; 
         
-       //@ts-ignore 
-        //(landingPage = new LandingPage((params = URLTools.GetParams()).get("model").toString(), GlobalData.GetDefaultTextureMaterialPath(params.get("model").toString()))); //; //.Render();w
-            //@ts-ignore
-        //@ts-ignore:
+    //    //@ts-ignore 
+    //     //(landingPage = new LandingPage((params = URLTools.GetParams()).get("model").toString(), GlobalData.GetDefaultTextureMaterialPath(params.get("model").toString()))); //; //.Render();w
+    //         //@ts-ignore
+    //     //@ts-ignore:
         
         
-        //landingPage.Render();
-        return;
-    }
+    //     //landingPage.Render();
+    //     return;
+    // }
 
-    if (window.location.search.length == 0) {
-        console.log("404");
+    // if (window.location.search.length == 0) {
+    //     console.log("404");
         
         
-        return;
-    }
+    //     return;
+    // }
     
     var model: string = "";
     

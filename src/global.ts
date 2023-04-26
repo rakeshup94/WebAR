@@ -5,7 +5,7 @@ export class GlobalData
 {
     public static DefaultDeviceInfo: DeviceInfo
 
-    public static DefaultTextureMaterialPath: string = "assets/";
+    public static DefaultTextureMaterialPath: string = "../assets/";
 
     public static DefaultTextureFileExtension: string =  ".jpg";
             
